@@ -55,7 +55,7 @@ function get_date(system) {
 function sortByKey(array, key) {
     return array.sort(function (a, b) {
         var x = a[key]; var y = b[key];
-        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        return (dateFns.differenceInDays(x, y) < 0 ? -1 : (dateFns.differenceInDays(x, y) > 0 ? 1 : 0));
     });
 }
 

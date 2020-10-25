@@ -14,20 +14,20 @@
             <th>Arrival</th>
             <th>Departure</th>
         </tr>
-        <div class="rows"></div>
-        <script>
-            $(document).ready(function () {
+        <tr class="rows">
+            <script>
+                $(document).ready(function () {
 
 
-                var itinary = get_full_schedule()
-                rows = ""
-                itinary.forEach(function (system) {
-                    rows = rows + '<tr><td>' + system.name + '</td><td>' + system.startdate + '</td><td>' + system.enddate + '</td></tr>\n'
-                })
-                $('.rows').html(rows);
-            });            
-        </script>
-
+                    var itinary = get_full_schedule()
+                    rows = ""
+                    itinary.forEach(function (system) {
+                        rows = rows + '<tr><td>' + system.name + '</td><td>' + system.startdate + '</td><td>' + system.enddate + '</td></tr>\n'
+                    })
+                    $('.rows').replaceWith(rows);
+                });            
+            </script>
+        </tr>
     </table>
 </body>
 
