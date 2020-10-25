@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>Gnosis Schedule</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.28.5/date_fns.min.js"></script>
+    <script src="schedule.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>System</th>
+            <th>Arrival</th>
+            <th>Departure</th>
+        </tr>
+        <div class="rows"></div>
+        <script>
+            $(document).ready(function () {
+
+
+                var itinary = get_full_schedule()
+                rows = ""
+                itinary.forEach(function (system) {
+                    rows = rows + '<tr><td>' + system.name + '</td><td>' + system.startdate + '</td><td>' + system.enddate + '</td></tr>\n'
+                })
+                $('.rows').html(rows);
+            });            
+        </script>
+
+    </table>
+</body>
+
+</html>
